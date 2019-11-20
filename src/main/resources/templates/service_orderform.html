@@ -274,7 +274,7 @@ div.center {
 						<td th:text="${order.dianhua}"></td>
 						<td th:text="${order.bnum}"></td>
 						<td th:text="${order.orderSum}"></td>
-						<td th:text="${order.createTime}"></td>
+						<td th:text="${#dates.format(order.createTime)}"></td>
 						<td th:text="${order.evaluate}"></td>
 				</tbody>
 			</table>
