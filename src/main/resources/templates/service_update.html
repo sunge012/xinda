@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http//www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Insert title here</title>
+
+
+ 
+  <script src="../js/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+
+
+<form action="/update"> 
+<input name="id" type="hidden"  th:value="${providerprodutList.id}"/> 
+    <div class="masking">
+        <div class="scroller">
+        <!--  <input type="text" th:each="product:${productList}"> -->
+            <ul>
+                <li>
+                    <span>图片简介</span>
+                    <button>选择图片</button>
+                </li>
+                <li>
+                    <span>服务名称</span>
+                    <input name="serviceName" placeholder="请输入服务名称" th:value="${providerprodutList.serviceName}"/>
+                </li>
+                <li>
+                    <span class="ver-top">服务说明</span>
+                    <textarea name="serviceInfo" id="" cols="45" rows="7" th:value="${providerprodutList.serviceInfo}"></textarea>
+                </li>
+                <li>
+                    <span>服务价格</span>
+                    <input type="number" name="price" th:value="${providerprodutList.price}" placeholder="请输入服务价格">
+                </li>
+            </ul>
+            <button class="save">提交</button>
+            <button class="cancel">取消</button> 
+           
+        </div>
+    </div>
+   </form>
+    <script src="../js/service_product.js"></script>
+</body>
+</html>
