@@ -106,6 +106,7 @@
     from provider
     where id = #{id,jdbcType=VARCHAR}
   </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
     delete from provider
     where id = #{id,jdbcType=VARCHAR}

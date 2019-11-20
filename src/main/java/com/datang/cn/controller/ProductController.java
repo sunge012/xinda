@@ -27,7 +27,6 @@ import com.datang.cn.service.ProviderService;
 
 
 @Controller
-@RequestMapping
 public class ProductController {
 
 	@Resource
@@ -213,8 +212,14 @@ public class ProductController {
 		return "service_update";
 	}
 	@RequestMapping("/serviceSetting")
-	public String selectByProvider(@RequestParam(defaultValue = "02") String id,Model model) {
+	public String selectByProvider(@RequestParam(defaultValue = "") String id,Model model) {
 		Provider provider=providerService.selectByPrimaryKey(id);
+		if(provider == null) {
+			System.out.println("provider is null");
+			System.out.println("id:"+id);
+		}else {
+			System.out.println("provider:"+provider.toString());
+		}
 		model.addAttribute("provider",provider);
 		return "service_setting";
 
