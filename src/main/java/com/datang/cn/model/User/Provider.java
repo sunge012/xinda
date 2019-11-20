@@ -204,4 +204,14 @@ public class Provider {
     public void setArea(String area) {
         this.area = area == null ? null : area.trim();
     }
+
+    @Override
+    public String toString() {
+        return "Provider{" +
+                "id='" + id + '\'' +
+                ", cellphone='" + cellphone + '\'' +
+                ", password='" + password + '\'' +
+                '}';
+    }
+
 }

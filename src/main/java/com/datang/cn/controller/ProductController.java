@@ -10,10 +10,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.datang.cn.dao.mapper.ProviderProdutMapper;
@@ -212,7 +209,8 @@ public class ProductController {
 		return "service_update";
 	}
 	@RequestMapping("/serviceSetting")
-	public String selectByProvider(@RequestParam(defaultValue = "") String id,Model model) {
+	public String selectByProvider(HttpServletRequest request,Model model) {
+		String id = (String) request.getSession().getAttribute("providerId");
 		Provider provider=providerService.selectByPrimaryKey(id);
 		if(provider == null) {
 			System.out.println("provider is null");
@@ -223,6 +221,15 @@ public class ProductController {
 		model.addAttribute("provider",provider);
 		return "service_setting";
 
+	}
+	@GetMapping("login")
+	public String login(){
+		return "service_login";
+	}
+	@RequestMapping("/logout")
+	public String logout(HttpServletRequest request){
+		request.getSession().removeAttribute("providerId");
+		return "redirect:";
 	}
 	@RequestMapping("/redirect")
 	public String jumpPage(HttpServletRequest  request) {

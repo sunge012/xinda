@@ -30,4 +30,6 @@ public interface ProviderMapper {
     int updateByPrimaryKeySelective(Provider record);
 
     int updateByPrimaryKey(Provider record);
+
+    String getIdByCellPhone(String cellphone);
 }

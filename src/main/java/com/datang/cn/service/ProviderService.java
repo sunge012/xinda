@@ -19,6 +19,7 @@ public interface ProviderService {
 	List<Provider> getProviderStore(String providerid);
 
 	void saveUserImg(Provider provider);
-		
-	}
+
+	String getIdByCellPhone(String cellphone);
+}
 	

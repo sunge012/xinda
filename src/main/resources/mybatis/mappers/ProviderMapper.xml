@@ -446,4 +446,7 @@
       area = #{area,jdbcType=VARCHAR}
     where id = #{id,jdbcType=VARCHAR}
   </update>
+  <select id="getIdByCellPhone" parameterType="String" resultType="String">
+    select id from provider where cellphone = #{value};
+  </select>
 </mapper>

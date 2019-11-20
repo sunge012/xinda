@@ -20,7 +20,6 @@ import com.datang.cn.util.ImgCodeUtil;
 public class ImgCodeController {
 	@RequestMapping("/images")
 	public void images(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
-		//System.out.println("123456");
 		// 调用工具类生成的验证码和验证码图片
         Map<String, Object> codeMap = ImgCodeUtil.generateCodeAndPic();
         // 将四位数字的验证码保存到Session中。

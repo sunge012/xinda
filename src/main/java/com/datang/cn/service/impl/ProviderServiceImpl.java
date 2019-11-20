@@ -65,6 +65,9 @@ public class ProviderServiceImpl implements ProviderService{
 		// TODO Auto-generated method stub
 		
 	}
-
+	@Override
+	public String getIdByCellPhone(String cellphone){
+		return providerMapper.getIdByCellPhone(cellphone);
+	}
 
 }
