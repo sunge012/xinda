@@ -1,21 +1,13 @@
 package com.datang.cn.service.impl;
 
-import java.io.InputStream;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.annotation.Resource;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
-import org.apache.tomcat.util.http.fileupload.ByteArrayOutputStream;
 import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
 
 import com.datang.cn.dao.mapper.ProviderMapper;
 import com.datang.cn.dao.mapper.ProviderProdutMapper;
-import com.datang.cn.model.User.Provider;
 import com.datang.cn.model.User.ProviderProdut;
 import com.datang.cn.model.User.ProviderProdutExample;
 import com.datang.cn.service.ProductService;

@@ -21,5 +21,7 @@ public interface ProviderService {
 	void saveUserImg(Provider provider);
 
 	String getIdByCellPhone(String cellphone);
+	
+	int updateByPrimaryKey(Provider record);
 }
 	

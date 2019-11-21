@@ -4,7 +4,7 @@
   <resultMap id="BaseResultMap" type="com.datang.cn.model.User.Provider">
     <id column="id" jdbcType="VARCHAR" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
-    <result column="provider_info_user" jdbcType="VARCHAR" property="providerInfoUser" />
+    <result column="provider_info" jdbcType="VARCHAR" property="providerInfo" />
     <result column="provider_info_member" jdbcType="VARCHAR" property="providerInfoMember" />
     <result column="cellphone" jdbcType="VARCHAR" property="cellphone" />
     <result column="password" jdbcType="VARCHAR" property="password" />
@@ -51,8 +51,7 @@
         </if>
       </foreach>
     </where>
-  </sql>
-  <sql id="Update_By_Example_Where_Clause">
+  </sql><sql id="Update_By_Example_Where_Clause">
     <where>
       <foreach collection="example.oredCriteria" item="criteria" separator="or">
         <if test="criteria.valid">
@@ -81,8 +80,9 @@
       </foreach>
     </where>
   </sql>
+  
   <sql id="Base_Column_List">
-    id, name, provider_info_user, provider_info_member, cellphone, password, provider_img, 
+    id, name, provider_info, provider_info_member, cellphone, password, provider_img, 
     region, wechat, qq, email, auth_file, work_time, create_time, tel, recommend, status, 
     province, city, area
   </sql>
@@ -118,14 +118,14 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.datang.cn.model.User.Provider">
-    insert into provider (id, name, provider_info_user, 
+    insert into provider (id, name, provider_info, 
       provider_info_member, cellphone, password, 
       provider_img, region, wechat, 
       qq, email, auth_file, 
       work_time, create_time, tel, 
       recommend, status, province, 
       city, area)
-    values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{providerInfoUser,jdbcType=VARCHAR}, 
+    values (#{id,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{providerInfo,jdbcType=VARCHAR}, 
       #{providerInfoMember,jdbcType=VARCHAR}, #{cellphone,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
       #{providerImg,jdbcType=VARCHAR}, #{region,jdbcType=VARCHAR}, #{wechat,jdbcType=VARCHAR}, 
       #{qq,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{authFile,jdbcType=VARCHAR}, 
@@ -142,8 +142,8 @@
       <if test="name != null">
         name,
       </if>
-      <if test="providerInfoUser != null">
-        provider_info_user,
+      <if test="providerInfo != null">
+        provider_info,
       </if>
       <if test="providerInfoMember != null">
         provider_info_member,
@@ -204,8 +204,8 @@
       <if test="name != null">
         #{name,jdbcType=VARCHAR},
       </if>
-      <if test="providerInfoUser != null">
-        #{providerInfoUser,jdbcType=VARCHAR},
+      <if test="providerInfo != null">
+        #{providerInfo,jdbcType=VARCHAR},
       </if>
       <if test="providerInfoMember != null">
         #{providerInfoMember,jdbcType=VARCHAR},
@@ -275,8 +275,8 @@
       <if test="record.name != null">
         name = #{record.name,jdbcType=VARCHAR},
       </if>
-      <if test="record.providerInfoUser != null">
-        provider_info_user = #{record.providerInfoUser,jdbcType=VARCHAR},
+      <if test="record.providerInfo != null">
+        provider_info = #{record.providerInfo,jdbcType=VARCHAR},
       </if>
       <if test="record.providerInfoMember != null">
         provider_info_member = #{record.providerInfoMember,jdbcType=VARCHAR},
@@ -338,7 +338,7 @@
     update provider
     set id = #{record.id,jdbcType=VARCHAR},
       name = #{record.name,jdbcType=VARCHAR},
-      provider_info_user = #{record.providerInfoUser,jdbcType=VARCHAR},
+      provider_info = #{record.providerInfo,jdbcType=VARCHAR},
       provider_info_member = #{record.providerInfoMember,jdbcType=VARCHAR},
       cellphone = #{record.cellphone,jdbcType=VARCHAR},
       password = #{record.password,jdbcType=VARCHAR},
@@ -366,8 +366,8 @@
       <if test="name != null">
         name = #{name,jdbcType=VARCHAR},
       </if>
-      <if test="providerInfoUser != null">
-        provider_info_user = #{providerInfoUser,jdbcType=VARCHAR},
+      <if test="providerInfo != null">
+        provider_info = #{providerInfo,jdbcType=VARCHAR},
       </if>
       <if test="providerInfoMember != null">
         provider_info_member = #{providerInfoMember,jdbcType=VARCHAR},
@@ -426,14 +426,18 @@
   <update id="updateByPrimaryKey" parameterType="com.datang.cn.model.User.Provider">
     update provider
     set name = #{name,jdbcType=VARCHAR},
-      provider_info_user = #{providerInfoUser,jdbcType=VARCHAR},
+    cellphone = #{cellphone,jdbcType=VARCHAR},
+    wechat = #{wechat,jdbcType=VARCHAR},
+    qq = #{qq,jdbcType=VARCHAR},
+    email = #{email,jdbcType=VARCHAR},
+      <!-- provider_info = #{providerInfo,jdbcType=VARCHAR},
       provider_info_member = #{providerInfoMember,jdbcType=VARCHAR},
-      cellphone = #{cellphone,jdbcType=VARCHAR},
+      
       password = #{password,jdbcType=VARCHAR},
       provider_img = #{providerImg,jdbcType=VARCHAR},
       region = #{region,jdbcType=VARCHAR},
-      wechat = #{wechat,jdbcType=VARCHAR},
-      qq = #{qq,jdbcType=VARCHAR},
+      
+      
       email = #{email,jdbcType=VARCHAR},
       auth_file = #{authFile,jdbcType=VARCHAR},
       work_time = #{workTime,jdbcType=VARCHAR},
@@ -443,7 +447,7 @@
       status = #{status,jdbcType=INTEGER},
       province = #{province,jdbcType=VARCHAR},
       city = #{city,jdbcType=VARCHAR},
-      area = #{area,jdbcType=VARCHAR}
+      area = #{area,jdbcType=VARCHAR} -->
     where id = #{id,jdbcType=VARCHAR}
   </update>
   <select id="getIdByCellPhone" parameterType="String" resultType="String">

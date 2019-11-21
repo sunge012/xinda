@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="./css/font-awesome.min.css">
     <link rel="stylesheet" href="./css/element-ui_2.12.0.css">
 
-    <script src="./js/jquery-3.4.1.min.js"></script>
+    <script src="../js/jquery-3.4.1.min.js"></script>
 </head>
 
 <body>
@@ -112,13 +112,15 @@
                         <input th:value="${provider.email}" readonly/>
                     </li>
                     <li>
-                        <button class="change-info">修改</button>
+                       <button class="change-info">修改</button>
                     </li>
                 </ul>
             </div>
             <div class="main-sercive">银行信息。。</div>
         </div>
     </div>
+    <form action="/providerupdate"> 
+    <input name="id" type="hidden"  th:value="${provider.id}"/> 
     <div class="masking">
         <div class="scroller">
             <h3>修改服务产品</h3>
@@ -129,7 +131,7 @@
                 </li>
                 <li>
                     <span>服务商名称</span>
-                    <input placeholder="请输入服务名称" />
+                    <input name="name" placeholder="请输入服务名称" th:value="${provider.name}"/>
                 </li>
                 <li>
                     <span class="ver-top">选择地区</span>
@@ -145,24 +147,26 @@
                 </li>
                 <li>
                     <span class="ver-top">手机号</span>
-                    <input type="text" placeholder="请输入手机号">
+                    <input name="cellphone" type="text" placeholder="请输入手机号" th:value="${provider.cellphone}"/>
                 </li>
                 <li>
                     <span class="ver-top">微信</span>
-                    <input type="text" placeholder="请输入微信">
+                    <input name="wechat" type="text" placeholder="请输入微信" th:value="${provider.wechat}"/>
                 </li>
                 <li>
                     <span class="ver-top">QQ</span>
-                    <input type="text" placeholder="请输入QQ">
+                    <input name="qq" type="text" placeholder="请输入QQ" th:value="${provider.qq}"/>
                 </li>
                 <li>
                     <span class="ver-top">邮箱</span>
-                    <input type="text" placeholder="请输入邮箱">
+                    <input name="email" type="text" placeholder="请输入邮箱" th:value="${provider.email}"/>
                 </li>
             </ul>
             <button class="save">提交</button>
             <button class="cancel">取消</button>
         </div>
+        </div>
+        </form>
         <script src="./js/service_setting.js"></script>
 </body>
 

@@ -70,4 +70,10 @@ public class ProviderServiceImpl implements ProviderService{
 		return providerMapper.getIdByCellPhone(cellphone);
 	}
 
+	@Override
+	public int updateByPrimaryKey(Provider record) {
+		// TODO Auto-generated method stub
+		return providerMapper.updateByPrimaryKey(record);
+	}
+
 }

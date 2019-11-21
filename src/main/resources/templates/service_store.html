@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"  xmlns:th="http//www.thymeleaf.org" >
 
 <head>
     <meta charset="UTF-8">
@@ -95,11 +95,11 @@
                 </li>
                 <li>
                     <span>QQ</span>
-                    <input placeholder="请输入QQ" />
+                    <input placeholder="请输入QQ" th:value="${provider.qq}"/>
                 </li>
                 <li>
                     <span>联系电话</span>
-                    <input placeholder="请输入联系电话" /> <i> (固定电话的填写格式：01012345678)</i>
+                    <input placeholder="请输入联系电话" th:value="${provider.cellphone}"/> <i> (固定电话的填写格式：01012345678)</i>
                 </li>
             </ul>
             <ul class="main-tab">

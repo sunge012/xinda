@@ -9,7 +9,7 @@ public class Provider {
 
     private String name;
 
-    private String providerInfoUser;
+    private String providerInfo;
 
     private String providerInfoMember;
 
@@ -61,12 +61,12 @@ public class Provider {
         this.name = name == null ? null : name.trim();
     }
 
-    public String getProviderInfoUser() {
-        return providerInfoUser;
+    public String getproviderInfo() {
+        return providerInfo;
     }
 
-    public void setProviderInfoUser(String providerInfoUser) {
-        this.providerInfoUser = providerInfoUser == null ? null : providerInfoUser.trim();
+    public void setproviderInfo(String providerInfo) {
+        this.providerInfo = providerInfo == null ? null : providerInfo.trim();
     }
 
     public String getProviderInfoMember() {

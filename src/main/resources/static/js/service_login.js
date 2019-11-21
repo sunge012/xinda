@@ -17,6 +17,7 @@ $(".login-btn").on("click", function() {
 	var cellphone = $('.s_cellphone').val();
 	alert(cellphone);
 	var password = $('.s_password').val();
+	alert(password);
 	var imgcode = $('.code').val();
 	$.ajax({
 		// 请求类型

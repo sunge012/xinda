@@ -1,16 +1,14 @@
 package com.datang.cn.dao.mapper;
 
+import com.datang.cn.model.User.BusinessOrder;
+import com.datang.cn.model.User.BusinessOrderExample;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-
-import com.datang.cn.model.User.BusinessOrder;
-import com.datang.cn.model.User.BusinessOrderExample;
-
 @Mapper
 public interface BusinessOrderMapper {
-	long countByExample(BusinessOrderExample example);
+long countByExample(BusinessOrderExample example);
 	
 	BusinessOrder selectByPrimaryKey(String businessNo);
 	
