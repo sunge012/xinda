@@ -51,11 +51,7 @@ public class ProductController {
     }
 
 
-    /*
-     * 根据服务商id获取订单
-     */
-
-
+ 
     /*
      * 产品上线下线
      */
@@ -108,7 +104,18 @@ public class ProductController {
     }
 
     @RequestMapping("/serviceStore")
-    public String serviceStore() {
+    public String selectStore(HttpServletRequest request, Model model) {
+        String id = (String) request.getSession().getAttribute("providerId");
+    	
+         Provider provider = providerService.selectByPrimaryKey(id);
+         if (provider == null) {
+             System.out.println("provider is null");
+             System.out.println("id:" + id);
+         } else {
+             System.out.println("provider:" + provider.toString());
+         }
+         model.addAttribute("provider", provider);
+       
 
         return "service_store";
 

@@ -44,8 +44,21 @@ public class Provider {
     private String city;
 
     private String area;
+    private String providerInfo;
 
-    public String getId() {
+    public String getProviderInfo() {
+		return providerInfo;
+	}
+
+	public void setProviderInfo(String providerInfo) {
+		this.providerInfo = providerInfo;
+	}
+
+	public void setProviderImg(Integer providerImg) {
+		this.providerImg = providerImg;
+	}
+
+	public String getId() {
         return id;
     }
 
