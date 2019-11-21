@@ -27,6 +27,8 @@ public class BusinessOrder {
 
     private Integer bnum;
 
+    private String id;
+
     public String getBusinessNo() {
         return businessNo;
     }
@@ -113,5 +115,13 @@ public class BusinessOrder {
 
     public void setBnum(Integer bnum) {
         this.bnum = bnum;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

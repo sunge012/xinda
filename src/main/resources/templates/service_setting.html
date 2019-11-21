@@ -132,16 +132,12 @@
                     <input placeholder="请输入服务名称" />
                 </li>
                 <li>
-                    <span class="ver-top">选择地区</span>
-                    <select name="" id="">
-                        <option value="">省</option>
-                    </select>
-                    <select name="" id="">
-                        <option value="">市</option>
-                    </select>
-                    <select name="" id="">
-                        <option value="">区</option>
-                    </select>
+                    <div data-toggle="distpicker">
+                        <span class="ver-top">选择地区</span>
+                        <select></select>
+                        <select></select>
+                        <select></select>
+                    </div>
                 </li>
                 <li>
                     <span class="ver-top">手机号</span>
@@ -164,6 +160,7 @@
             <button class="cancel">取消</button>
         </div>
         <script src="./js/service_setting.js"></script>
+        <script src="./js/dist/distpicker.js"></script>
 </body>
 
 </html>
