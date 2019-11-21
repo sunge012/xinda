@@ -76,6 +76,7 @@ public class ProductController {
 			System.out.println("商品id2：" + providerProdut.getId());
 			System.out.println("商品状态： " + providerProdut.getStatus());
 
+//<<<<<<< HEAD
 			providerProdutMapper.updateByPrimaryKeySelective(providerProdut);
 			map.put("mem", "修改状态成功");
 			map.put("code", 1);
@@ -86,7 +87,6 @@ public class ProductController {
 	@RequestMapping("/serviceProduct")
 
 	public String serviceProduct() {
-
 		return "service_product";
 
 	}
@@ -121,6 +121,7 @@ public class ProductController {
 		List<ProviderProdut> providerprodutList = productService.selectByName(pageStart, pageSize, servicename);
 		long count = 0;
 
+//<<<<<<< HEAD 从这里
 		if ("".equals(servicename)) {
 			count = productService.getCount();
 		} else {

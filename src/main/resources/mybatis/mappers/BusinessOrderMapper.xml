@@ -13,7 +13,7 @@
     <result column="bname" jdbcType="VARCHAR" property="bname" />
     <result column="dianhua" jdbcType="INTEGER" property="dianhua" />
     <result column="bnum" jdbcType="INTEGER" property="bnum" />
-    <result column="id" jdbcType="VARCHAR" property="id" />
+    <result column="id" jdbcType="VARCHAR" property="id"/>
   </resultMap>
   <sql id="Example_Where_Clause">
     <where>
@@ -115,7 +115,7 @@
     values (#{businessNo,jdbcType=VARCHAR}, #{orderInfo,jdbcType=VARCHAR}, #{memberId,jdbcType=VARCHAR}, 
       #{orderSum,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, #{evaluate,jdbcType=VARCHAR}, 
       #{payType,jdbcType=INTEGER}, #{status,jdbcType=INTEGER}, #{bname,jdbcType=VARCHAR}, 
-      #{dianhua,jdbcType=INTEGER}, #{bnum,jdbcType=INTEGER}, #{id,jdbcType=VARCHAR})
+      #{dianhua,jdbcType=INTEGER}, #{bnum,jdbcType=INTEGER},#{id,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.datang.cn.model.User.BusinessOrder">
     insert into business_order
@@ -192,7 +192,7 @@
         #{bnum,jdbcType=INTEGER},
       </if>
       <if test="id != null">
-        #{id,jdbcType=VARCHAR},
+        id,
       </if>
     </trim>
   </insert>
@@ -239,7 +239,7 @@
         bnum = #{record.bnum,jdbcType=INTEGER},
       </if>
       <if test="record.id != null">
-        id = #{record.id,jdbcType=VARCHAR},
+        bnum = #{record.id,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="_parameter != null">
@@ -259,7 +259,7 @@
       bname = #{record.bname,jdbcType=VARCHAR},
       dianhua = #{record.dianhua,jdbcType=INTEGER},
       bnum = #{record.bnum,jdbcType=INTEGER},
-      id = #{record.id,jdbcType=VARCHAR}
+      id = #{record.id,jdbcType=VARCHAR},
     <if test="_parameter != null">
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -298,7 +298,7 @@
         bnum = #{bnum,jdbcType=INTEGER},
       </if>
       <if test="id != null">
-        id = #{id,jdbcType=VARCHAR},
+        bnum = #{id,jdbcType=VARCHAR},
       </if>
     </set>
     where business_no = #{businessNo,jdbcType=VARCHAR}
@@ -315,9 +315,10 @@
       bname = #{bname,jdbcType=VARCHAR},
       dianhua = #{dianhua,jdbcType=INTEGER},
       bnum = #{bnum,jdbcType=INTEGER},
-      id = #{id,jdbcType=VARCHAR}
+      id = #{id,jdbcType=VARCHAR},
     where business_no = #{businessNo,jdbcType=VARCHAR}
   </update>
+  
   
   <select id="getCount" parameterType="map" resultType="java.lang.Integer">
     select count(*) from business_order

@@ -122,6 +122,6 @@ public class BusinessOrder {
     }
 
     public void setId(String id) {
-        this.id = id == null ? null : id.trim();
+        this.id = id;
     }
 }

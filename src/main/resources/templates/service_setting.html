@@ -134,16 +134,12 @@
                     <input name="name" placeholder="请输入服务名称" th:value="${provider.name}"/>
                 </li>
                 <li>
-                    <span class="ver-top">选择地区</span>
-                    <select name="" id="">
-                        <option value="">省</option>
-                    </select>
-                    <select name="" id="">
-                        <option value="">市</option>
-                    </select>
-                    <select name="" id="">
-                        <option value="">区</option>
-                    </select>
+                    <div data-toggle="distpicker">
+                        <span class="ver-top">选择地区</span>
+                        <select></select>
+                        <select></select>
+                        <select></select>
+                    </div>
                 </li>
                 <li>
                     <span class="ver-top">手机号</span>
@@ -168,6 +164,7 @@
         </div>
         </form>
         <script src="./js/service_setting.js"></script>
+        <script src="./js/dist/distpicker.js"></script>
 </body>
 
 </html>

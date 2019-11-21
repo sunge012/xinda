@@ -45,7 +45,19 @@ public class Provider {
 
     private String area;
 
-    public String getId() {
+    public String getProviderInfo() {
+		return providerInfo;
+	}
+
+	public void setProviderInfo(String providerInfo) {
+		this.providerInfo = providerInfo;
+	}
+
+	public void setProviderImg(Integer providerImg) {
+		this.providerImg = providerImg;
+	}
+
+	public String getId() {
         return id;
     }
 
